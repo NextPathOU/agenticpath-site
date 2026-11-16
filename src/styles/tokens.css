@@ -1,0 +1,13 @@
+/* AgenticPath design tokens, from AgenticPathICM identity/design-system.md (2026-11-16).
+   Palette: paper, ink, deep teal, muted. Rule: never more than three
+   colors on one surface. Teal is the exclamation mark, not the sentence. */
+:root {
+  --paper: #f5eee5;
+  --ink: #0a0b08;
+  --teal: #023c3f;
+  --muted: #5a564c;
+
+  --font-headline: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+}
