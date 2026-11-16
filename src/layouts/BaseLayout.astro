@@ -15,8 +15,8 @@ const { title, description = 'Marketing with agentic systems for B2B companies w
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#F5EEE5" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,11 +27,12 @@ const { title, description = 'Marketing with agentic systems for B2B companies w
   </head>
   <body>
     <header class="site">
-      <a href="/"><img class="wordmark" src="/wordmark.png" alt="AgenticPath" /></a>
+      <a href="./"><img class="wordmark" src="wordmark.png" alt="AgenticPath" /></a>
+      <a class="header-cta" href="#contact">Get in touch</a>
     </header>
     <slot />
     <footer class="site">
-      <img class="wordmark" src="/wordmark.png" alt="AgenticPath" />
+      <img class="wordmark" src="wordmark.png" alt="AgenticPath" />
       <p class="muted">AgenticPath is a working name for now. Founders: Amir Baruch and Kayan.</p>
     </footer>
   </body>
