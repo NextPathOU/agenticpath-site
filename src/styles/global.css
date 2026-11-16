@@ -1,13 +1,4 @@
-/* AgenticPath design system, see identity/design-system.md in AgenticPathICM.
-   Palette: paper #F5EEE5, ink #0A0B08, deep teal #023C3F, muted #5A564C.
-   Rule: never more than three colors on one surface. Teal is the
-   exclamation mark, not the sentence. */
-:root {
-  --paper: #f5eee5;
-  --ink: #0a0b08;
-  --teal: #023c3f;
-  --muted: #5a564c;
-}
+@import './tokens.css';
 
 * { box-sizing: border-box; }
 
@@ -15,31 +6,28 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
 }
 
 a { color: var(--teal); }
 
-header.site, footer.site {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 1.5rem 1rem;
-}
-
-header.site img.wordmark { height: 40px; width: auto; display: block; }
-
-main { max-width: 720px; margin: 0 auto; padding: 0 1rem 3rem; }
-
 h1, h2, h3 {
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-weight: 800;
+  font-family: var(--font-headline);
+  font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.15;
+  line-height: 1.12;
+  margin: 0 0 0.5rem;
 }
+
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); }
+h3 { font-size: 1.25rem; }
+
+p { margin: 0 0 1rem; }
 
 .kicker, .num, code {
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-family: var(--font-mono);
 }
 
 .kicker {
@@ -49,19 +37,100 @@ h1, h2, h3 {
   color: var(--teal);
 }
 
-p.lede { font-size: 1.25rem; }
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  color: var(--teal);
+  margin: 0 0 1rem;
+}
 
+.lede { font-size: 1.25rem; }
 .muted { color: var(--muted); }
 
-ol.process { list-style: none; padding: 0; counter-reset: step; }
-ol.process li {
-  counter-increment: step;
-  border-top: 2px solid var(--ink);
-  padding: 1rem 0;
+/* Header */
+header.site {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
 }
-ol.process li::before {
-  content: "0" counter(step) ".";
-  font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  color: var(--teal);
-  display: block;
+header.site img.wordmark { height: 36px; width: auto; display: block; }
+
+/* Bands */
+.band { padding: 4rem 1.5rem; }
+.band-inner { max-width: 1080px; margin: 0 auto; }
+.band-inner-narrow { max-width: 720px; margin: 0 auto; }
+
+.band-hero { padding-top: 2rem; }
+.hero-lockup { width: min(420px, 80%); height: auto; display: block; margin-bottom: 2.5rem; }
+.hero h1 { max-width: 16ch; }
+.hero .lede { max-width: 52ch; }
+
+.cta {
+  display: inline-block;
+  background: var(--teal);
+  color: var(--paper);
+  font-family: var(--font-headline);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  margin-top: 1rem;
 }
+.cta:hover { text-decoration: underline; }
+
+/* Journey diagram */
+.journey { width: 100%; height: auto; display: block; margin: 2rem 0 1rem; }
+.journey .route { stroke: var(--ink); stroke-width: 3; }
+.journey .node { fill: var(--paper); stroke: var(--ink); stroke-width: 3; }
+.journey .node-num { font-family: var(--font-mono); font-size: 15px; fill: var(--ink); }
+.journey .stop-label { font-family: var(--font-headline); font-weight: 700; font-size: 19px; fill: var(--ink); }
+.journey .stop-detail { font-family: var(--font-body); font-size: 15px; fill: var(--muted); }
+.journey .full-stop { fill: var(--teal); }
+
+/* Dark band */
+.band-dark { background: var(--ink); color: var(--paper); }
+.band-dark .eyebrow { color: var(--paper); }
+.band-dark .muted { color: #c9c2b4; }
+.problems {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.problems h3 { border-top: 2px solid var(--teal); padding-top: 1rem; }
+.problems .num { color: var(--paper); display: block; margin-bottom: 0.5rem; }
+
+/* Process cards */
+.process {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.process article { border-top: 2px solid var(--ink); padding-top: 1rem; }
+.process .num { color: var(--teal); display: block; margin-bottom: 0.5rem; }
+
+/* Closing band */
+.band-close { background: var(--teal); color: var(--paper); }
+.band-close .eyebrow { color: var(--paper); }
+.band-close a { color: var(--paper); }
+.band-close .cta { background: var(--paper); color: var(--teal); }
+
+/* Footer */
+footer.site {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+footer.site img.wordmark { height: 28px; width: auto; display: block; margin-bottom: 1rem; }
+
+@media (max-width: 640px) {
+  .band { padding: 3rem 1.25rem; }
+}
+
+/* Browser surfaces, the parts nobody drew still carry the design. */
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+::selection { background: var(--teal); color: var(--paper); }
