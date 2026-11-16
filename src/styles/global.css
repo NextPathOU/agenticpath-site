@@ -58,6 +58,14 @@ header.site {
   align-items: center;
 }
 header.site img.wordmark { height: 36px; width: auto; display: block; }
+header.site { justify-content: space-between; }
+.header-cta {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+.header-cta:hover { text-decoration: underline; }
 
 /* Bands */
 .band { padding: 4rem 1.5rem; }
@@ -80,6 +88,7 @@ header.site img.wordmark { height: 36px; width: auto; display: block; }
   margin-top: 1rem;
 }
 .cta:hover { text-decoration: underline; }
+.cta-ghost { background: transparent; color: var(--teal); outline: 2px solid var(--teal); outline-offset: -2px; }
 
 /* Journey diagram */
 .journey { width: 100%; height: auto; display: block; margin: 2rem 0 1rem; }
@@ -112,6 +121,15 @@ header.site img.wordmark { height: 36px; width: auto; display: block; }
 }
 .process article { border-top: 2px solid var(--ink); padding-top: 1rem; }
 .process .num { color: var(--teal); display: block; margin-bottom: 0.5rem; }
+
+/* Contact form */
+.contact-form {
+  width: 100%;
+  height: 820px;
+  border: 2px solid var(--ink);
+  background: #fff;
+  margin: 1rem 0;
+}
 
 /* Closing band */
 .band-close { background: var(--teal); color: var(--paper); }
