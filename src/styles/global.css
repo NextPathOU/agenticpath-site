@@ -1,0 +1,67 @@
+/* AgenticPath design system, see identity/design-system.md in AgenticPathICM.
+   Palette: paper #F5EEE5, ink #0A0B08, deep teal #023C3F, muted #5A564C.
+   Rule: never more than three colors on one surface. Teal is the
+   exclamation mark, not the sentence. */
+:root {
+  --paper: #f5eee5;
+  --ink: #0a0b08;
+  --teal: #023c3f;
+  --muted: #5a564c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--teal); }
+
+header.site, footer.site {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+header.site img.wordmark { height: 40px; width: auto; display: block; }
+
+main { max-width: 720px; margin: 0 auto; padding: 0 1rem 3rem; }
+
+h1, h2, h3 {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.kicker, .num, code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--teal);
+}
+
+p.lede { font-size: 1.25rem; }
+
+.muted { color: var(--muted); }
+
+ol.process { list-style: none; padding: 0; counter-reset: step; }
+ol.process li {
+  counter-increment: step;
+  border-top: 2px solid var(--ink);
+  padding: 1rem 0;
+}
+ol.process li::before {
+  content: "0" counter(step) ".";
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--teal);
+  display: block;
+}
