@@ -1,0 +1,25 @@
+---
+const { title } = Astro.props;
+import "../styles/global.css";
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <title>{title} — AgenticPath</title>
+    <meta name="description" content="Marketing with agentic systems for B2B companies with complex, high-value sales." />
+  </head>
+  <body>
+    <header class="site">
+      <a href="/"><img class="wordmark" src="/wordmark.png" alt="AgenticPath" /></a>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site">
+      <p class="muted">AgenticPath is a working name. Marketing with agentic systems for B2B companies with long sales cycles and high ticket value.</p>
+    </footer>
+  </body>
+</html>
