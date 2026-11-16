@@ -5,4 +5,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://nextpathou.github.io/agenticpath-site/',
   integrations: [sitemap()],
+  // Never inline stylesheets, so the shipped CSS stays one external file
+  // the design flow detector can read.
+  build: { inlineStylesheets: 'never' },
 });
