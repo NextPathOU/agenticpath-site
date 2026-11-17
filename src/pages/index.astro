@@ -8,7 +8,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <main>
     <div class="band band-hero">
       <section class="band-inner hero">
-        <img class="hero-lockup" src="wordmark-stacked.png" alt="AgenticPath" />
+        <img class="hero-lockup lockup-light" src="wordmark-stacked.png" alt="AgenticPath" />
+        <img class="hero-lockup lockup-dark" src="wordmark-mono-paper-on-ink.png" alt="AgenticPath" />
         <p class="kicker">Marketing, with agentic systems</p>
         <h1>Marketing for B2B companies with complex, high-value sales.</h1>
         <p class="lede">AgenticPath helps B2B companies with long sales cycles and high-value deals improve marketing and the marketing-to-sales system.</p>
@@ -16,11 +17,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </section>
     </div>
 
-    <div class="band">
+    <div class="band" id="engagement" tabindex="-1">
       <section class="band-inner">
         <p class="eyebrow">The engagement</p>
         <h2>Two months. Then you decide.</h2>
-        <svg class="journey" viewBox="0 0 760 240" role="img" aria-label="A route with three stops: month one audit, month two strategy, then optional execution, ending in a teal square full stop.">
+        <svg class="journey" viewBox="0 0 760 240" role="img" aria-label="A route with three stops: month one audit, month two strategy, then optional execution, ending in a teal square full stop. A teal point travels along the route through the three stops.">
           <line class="route" x1="40" y1="70" x2="680" y2="70" />
           <g>
             <circle class="node" cx="140" cy="70" r="20" />
@@ -40,13 +41,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <text class="stop-label" x="620" y="130" text-anchor="middle">Execution</text>
             <text class="stop-detail" x="620" y="156" text-anchor="middle">Optional</text>
           </g>
+          <circle class="traveller" r="7" cx="0" cy="0">
+            <animateMotion dur="6s" repeatCount="indefinite" path="M40,70 L680,70" />
+          </circle>
           <rect class="full-stop" x="688" y="55" width="30" height="30" />
         </svg>
         <p class="muted">One month to understand how you win customers today. One month to turn that into a tailored strategy and go-to-market plan. Execution after that is your call, not ours to assume.</p>
       </section>
     </div>
 
-    <div class="band band-dark">
+    <div class="band band-dark" id="problem" tabindex="-1">
       <section class="band-inner">
         <p class="eyebrow">The problem</p>
         <h2>Long cycles. High stakes. Marketing that does not keep up.</h2>
@@ -75,7 +79,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </section>
     </div>
 
-    <div class="band" id="how">
+    <div class="band" id="how" tabindex="-1">
       <section class="band-inner">
         <p class="eyebrow">How we work</p>
         <h2>Human-led. Agentic where it repeats.</h2>
@@ -99,7 +103,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </section>
     </div>
 
-    <div class="band" id="contact">
+    <div class="band" id="contact" tabindex="-1">
       <section class="band-inner">
         <p class="eyebrow">Talk to us</p>
         <h2>Tell us what marketing should do.</h2>
