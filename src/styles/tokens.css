@@ -1,13 +1,29 @@
 /* AgenticPath design tokens, from AgenticPathICM identity/design-system.md (2026-11-16).
    Palette: paper, ink, deep teal, muted. Rule: never more than three
-   colors on one surface. Teal is the exclamation mark, not the sentence. */
+   colors on one surface. Teal is the exclamation mark, not the sentence.
+   Dark theme flips the surfaces; the teal square itself never changes. */
 :root {
   --paper: #f5eee5;
   --ink: #0a0b08;
   --teal: #023c3f;
   --muted: #5a564c;
 
+  --bg: var(--paper);
+  --fg: var(--ink);
+  --link: var(--teal);
+  --band-bg: var(--ink);
+  --band-fg: var(--paper);
+
   --font-headline: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+:root[data-theme='dark'] {
+  --bg: #0a0b08;
+  --fg: #f5eee5;
+  --muted: #b8b0a0;
+  --link: #7fb5b0;
+  --band-bg: #1e1d19;
+  --band-fg: #f5eee5;
 }
