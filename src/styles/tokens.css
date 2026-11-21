@@ -1,17 +1,22 @@
-/* AgenticPath design tokens, from AgenticPathICM identity/design-system.md (2026-11-16).
-   Palette: paper, ink, deep teal, muted. Rule: never more than three
-   colors on one surface. Teal is the exclamation mark, not the sentence.
-   Dark theme flips the surfaces; the teal square itself never changes. */
+/* AgenticPath design tokens, copied from end.game values 2026-11-21
+   (sampled from rendered pixels, see AgenticPathICM
+   flows/design/reference/endgame-borrowings.md).
+   Dark is the default theme; light is the toggle.
+   Palette: dark navy base, pale cream text, lime accent, grey-blue muted.
+   Rule: never more than three colors on one surface. Lime is the
+   exclamation mark, not the sentence. */
 :root {
-  --paper: #f5eee5;
-  --ink: #0a0b08;
-  --teal: #023c3f;
-  --muted: #5a564c;
+  --paper: #faffeb;
+  --ink: #000a19;
+  --accent: #a0eb23;
+  --on-accent: #000a19;
+  --muted: #7e93a8;
+  --deep-blue: #1a3356;
 
-  --bg: var(--paper);
-  --fg: var(--ink);
-  --link: var(--teal);
-  --band-bg: var(--ink);
+  --bg: var(--ink);
+  --fg: var(--paper);
+  --link: var(--accent);
+  --band-bg: var(--deep-blue);
   --band-fg: var(--paper);
 
   --font-headline: 'Space Grotesk', system-ui, sans-serif;
@@ -19,11 +24,11 @@
   --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
 }
 
-:root[data-theme='dark'] {
-  --bg: #0a0b08;
-  --fg: #f5eee5;
-  --muted: #b8b0a0;
-  --link: #7fb5b0;
-  --band-bg: #1e1d19;
-  --band-fg: #f5eee5;
+:root[data-theme='light'] {
+  --bg: #faffeb;
+  --fg: #000a19;
+  --muted: #5a564c;
+  --link: #000a19;
+  --band-bg: var(--deep-blue);
+  --band-fg: var(--paper);
 }
