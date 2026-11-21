@@ -151,7 +151,7 @@ header.site a.mark { display: inline-block; font-family: var(--font-headline); f
 .band-inner { max-width: 1400px; margin: 0 auto; }
 .band-inner-narrow { max-width: 720px; margin: 0 auto; }
 
-.band-hero { padding-top: 2rem; }
+.band-hero { padding-top: 2rem; padding-bottom: 6rem; }
 .hero { text-align: center; }
 .hero h1 { max-width: 16ch; margin-left: auto; margin-right: auto; }
 .hero .lede { margin-left: auto; margin-right: auto; }
