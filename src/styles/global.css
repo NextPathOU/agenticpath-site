@@ -190,7 +190,8 @@ header.site a.mark { display: inline-block; font-family: var(--font-headline); f
   margin-top: 2rem;
 }
 .problems h3 { border-top: 2px solid var(--accent); padding-top: 1rem; }
-.problems .who-item { font-family: var(--font-headline); font-weight: 700; font-size: 1.25rem; border-top: 2px solid var(--accent); padding-top: 1rem; margin: 0; }
+.problems .who-item { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-headline); font-weight: 700; font-size: 1.25rem; border-top: 2px solid var(--accent); padding-top: 1rem; margin: 0; }
+.problems .who-item svg { flex: none; color: var(--accent); }
 .problems .num { color: var(--band-fg); display: block; margin-bottom: 0.5rem; }
 
 /* Process cards */
