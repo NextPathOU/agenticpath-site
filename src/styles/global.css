@@ -26,15 +26,8 @@ h3 { font-size: 1.25rem; }
 
 p { margin: 0 0 1rem; }
 
-.kicker, .num, code {
+.num, code {
   font-family: var(--font-mono);
-}
-
-.kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  color: var(--link);
 }
 
 .eyebrow {
