@@ -91,7 +91,7 @@ header.site a.mark { display: inline-block; font-family: var(--font-headline); f
 }
 .header-cta:hover { text-decoration: underline; }
 
-/* Icon buttons, hamburger and night mode */
+/* Icon buttons, hamburger */
 .icon-btn {
   background: transparent;
   border: 1px solid var(--fg);
@@ -105,9 +105,9 @@ header.site a.mark { display: inline-block; font-family: var(--font-headline); f
   cursor: pointer;
 }
 .icon-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.mode-btn .icon-sun { display: none; }
-[data-theme='dark'] .mode-btn .icon-sun { display: block; }
-[data-theme='dark'] .mode-btn .icon-moon { display: none; }
+.menu-mode .icon-sun { display: none; }
+[data-theme='dark'] .menu-mode .icon-sun { display: block; }
+[data-theme='dark'] .menu-mode .icon-moon { display: none; }
 
 /* Section menu, opened by the hamburger */
 .section-menu {
@@ -129,6 +129,23 @@ header.site a.mark { display: inline-block; font-family: var(--font-headline); f
   text-decoration: none;
 }
 .section-menu a:hover { background: var(--accent); color: var(--on-accent); }
+.section-menu .menu-mode {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--fg);
+  color: var(--fg);
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+}
+.section-menu .menu-mode:hover { background: var(--accent); color: var(--on-accent); }
 
 /* Bands */
 .band { padding: 4rem 1.5rem; }
