@@ -20,7 +20,7 @@ h1, h2, h3 {
   margin: 0 0 0.5rem;
 }
 
-h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+h1 { font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 300; text-transform: lowercase; }
 h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); }
 h3 { font-size: 1.25rem; }
 
@@ -58,7 +58,7 @@ p { margin: 0 0 1rem; }
 
 /* Header */
 header.site {
-  max-width: 1080px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -66,8 +66,7 @@ header.site {
   justify-content: space-between;
   position: relative;
 }
-header.site a.mark { display: inline-block; line-height: 0; }
-header.site a.mark img { height: 28px; width: 28px; display: block; }
+header.site a.mark { display: inline-block; font-family: var(--font-headline); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; line-height: 1.6; color: var(--fg); text-decoration: none; padding: 6px 0; }
 .header-actions { display: flex; align-items: center; gap: 0.5rem; }
 .header-cta {
   font-family: var(--font-headline);
@@ -92,7 +91,7 @@ header.site a.mark img { height: 28px; width: 28px; display: block; }
   justify-content: center;
   cursor: pointer;
 }
-.icon-btn:hover { background: var(--teal); border-color: var(--teal); color: var(--paper); }
+.icon-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .mode-btn .icon-sun { display: none; }
 [data-theme='dark'] .mode-btn .icon-sun { display: block; }
 [data-theme='dark'] .mode-btn .icon-moon { display: none; }
@@ -116,11 +115,12 @@ header.site a.mark img { height: 28px; width: 28px; display: block; }
   font-weight: 700;
   text-decoration: none;
 }
-.section-menu a:hover { background: var(--teal); color: var(--paper); }
+.section-menu a:hover { background: var(--accent); color: var(--on-accent); }
 
 /* Bands */
 .band { padding: 4rem 1.5rem; }
-.band-inner { max-width: 1080px; margin: 0 auto; }
+.band + .band { border-top: 1px solid color-mix(in srgb, var(--fg) 15%, transparent); }
+.band-inner { max-width: 1400px; margin: 0 auto; }
 .band-inner-narrow { max-width: 720px; margin: 0 auto; }
 
 .band-hero { padding-top: 2rem; }
@@ -133,8 +133,8 @@ header.site a.mark img { height: 28px; width: 28px; display: block; }
 
 .cta {
   display: inline-block;
-  background: var(--teal);
-  color: var(--paper);
+  background: var(--accent);
+  color: var(--on-accent);
   font-family: var(--font-headline);
   font-weight: 700;
   text-decoration: none;
@@ -151,9 +151,9 @@ header.site a.mark img { height: 28px; width: 28px; display: block; }
 .journey .node-num { font-family: var(--font-mono); font-size: 15px; fill: var(--fg); }
 .journey .stop-label { font-family: var(--font-headline); font-weight: 700; font-size: 19px; fill: var(--fg); }
 .journey .stop-detail { font-family: var(--font-body); font-size: 15px; fill: var(--muted); }
-.journey .full-stop { fill: var(--teal); }
+.journey .full-stop { fill: var(--accent); }
 [data-theme='dark'] .journey .full-stop { stroke: var(--fg); stroke-width: 1.5; }
-.journey .traveller { fill: var(--teal); stroke: var(--fg); stroke-width: 1; }
+.journey .traveller { fill: var(--accent); stroke: var(--fg); stroke-width: 1; }
 @media (prefers-reduced-motion: reduce) {
   .journey .traveller { display: none; }
 }
@@ -162,14 +162,13 @@ header.site a.mark img { height: 28px; width: 28px; display: block; }
 .band-dark { background: var(--band-bg); color: var(--band-fg); }
 .band-dark .eyebrow { color: var(--band-fg); }
 .band-dark .muted { color: #c9c2b4; }
-[data-theme='dark'] .band-dark .muted { color: var(--muted); }
 .problems {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
-.problems h3 { border-top: 2px solid var(--teal); padding-top: 1rem; }
+.problems h3 { border-top: 2px solid var(--accent); padding-top: 1rem; }
 .problems .num { color: var(--band-fg); display: block; margin-bottom: 0.5rem; }
 
 /* Process cards */
@@ -191,15 +190,9 @@ header.site a.mark img { height: 28px; width: 28px; display: block; }
   margin: 1rem 0;
 }
 
-/* Closing band */
-.band-close { background: var(--teal); color: var(--paper); }
-.band-close .eyebrow { color: var(--paper); }
-.band-close a { color: var(--paper); }
-.band-close .cta { background: var(--paper); color: var(--teal); }
-
 /* Footer */
 footer.site {
-  max-width: 1080px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 1.5rem 3rem;
 }
@@ -210,10 +203,7 @@ footer.site img.wordmark { height: 28px; width: auto; display: block; margin-bot
 
 /* Browser surfaces, the parts nobody drew still carry the design. */
 :focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
-::selection { background: var(--teal); color: var(--paper); }
-
-/* Header logo link: 28px mark with 8px padding on all sides, 44px square. */
-header.site a.mark { padding: 8px; }
+::selection { background: var(--accent); color: var(--on-accent); }
 
 @media (max-width: 640px) {
   .band { padding: 3rem 1.25rem; }
