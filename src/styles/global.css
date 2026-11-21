@@ -59,6 +59,8 @@ p { margin: 0 0 1rem; }
   .tagline .digit.flipping { animation: none; }
 }
 .lede { font-size: 1.25rem; }
+.lede .hl { color: var(--accent); }
+[data-theme='light'] .lede .hl { color: #4d7c0f; }
 .muted { color: var(--muted); }
 
 /* Header */
