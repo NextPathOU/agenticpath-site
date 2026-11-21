@@ -174,42 +174,13 @@ header.site a.mark { display: inline-block; font-family: var(--font-headline); f
 .journey .stop-detail { font-family: var(--font-body); font-size: 15px; fill: var(--muted); }
 .journey .full-stop { fill: var(--accent); }
 [data-theme='dark'] .journey .full-stop { stroke: var(--fg); stroke-width: 1.5; }
-.journey .traveller { fill: var(--accent); stroke: var(--fg); stroke-width: 1; animation: traveller-hide 12s linear infinite; }
-/* Each stop lights up green while the traveller overlaps it, then fades back.
-   The traveller runs a 12s loop along the route, half the original speed.
-   Node 01 is hit at 15.6% of the loop, node 02 at 53.1%, node 03 at 90.6%.
-   One shared keyframe pair, shifted per node with the animation delay, keeps
-   the light-up in step with the dot. The dot itself hides while a node is
-   lit and returns once the node is dark again. */
-.journey .node-1 .node { animation: node-lit 12s linear infinite; }
-.journey .node-1 .node-num { animation: num-lit 12s linear infinite; }
-.journey .node-2 .node { animation: node-lit 12s linear 4.5s infinite; }
-.journey .node-2 .node-num { animation: num-lit 12s linear 4.5s infinite; }
-.journey .node-3 .node { animation: node-lit 12s linear 9s infinite; }
-.journey .node-3 .node-num { animation: num-lit 12s linear 9s infinite; }
-@keyframes traveller-hide {
-  0%, 11.4% { opacity: 1; }
-  13%, 18.4% { opacity: 0; }
-  19.8%, 48.9% { opacity: 1; }
-  50.4%, 55.9% { opacity: 0; }
-  57.3%, 86.4% { opacity: 1; }
-  87.9%, 93.4% { opacity: 0; }
-  94.8%, 100% { opacity: 1; }
-}
-@keyframes node-lit {
-  0%, 11.4% { fill: var(--bg); }
-  15.6% { fill: var(--accent); }
-  19.8%, 100% { fill: var(--bg); }
-}
-@keyframes num-lit {
-  0%, 11.4% { fill: var(--fg); }
-  15.6% { fill: var(--on-accent); }
-  19.8%, 100% { fill: var(--fg); }
-}
+.journey .traveller { fill: var(--accent); stroke: var(--fg); stroke-width: 1; transition: opacity 0.2s ease; }
+.journey .traveller.hidden { opacity: 0; }
+.journey .node, .journey .node-num { transition: fill 0.25s ease; }
+.journey .lit .node { fill: var(--accent); }
+.journey .lit .node-num { fill: var(--on-accent); }
 @media (prefers-reduced-motion: reduce) {
   .journey .traveller { display: none; }
-  .journey .node-1 .node, .journey .node-2 .node, .journey .node-3 .node,
-  .journey .node-1 .node-num, .journey .node-2 .node-num, .journey .node-3 .node-num { animation: none; }
 }
 
 /* Dark band */
