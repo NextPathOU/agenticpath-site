@@ -55,7 +55,7 @@ p { margin: 0 0 1rem; }
   margin: 0 0 1rem;
   perspective: 600px;
 }
-.tagline .digit { display: inline-block; }
+.tagline .digit { display: inline-block; font-family: 'DSEG7-Classic', var(--font-headline); }
 .tagline .digit.flipping { animation: digit-flip 0.6s ease-in-out; }
 @keyframes digit-flip {
   0% { transform: rotateX(0deg); }
@@ -137,7 +137,9 @@ header.site a.mark { display: inline-block; font-family: var(--font-headline); f
 .band-inner-narrow { max-width: 720px; margin: 0 auto; }
 
 .band-hero { padding-top: 2rem; }
-.hero h1 { max-width: 16ch; }
+.hero { text-align: center; }
+.hero h1 { max-width: 16ch; margin-left: auto; margin-right: auto; }
+.hero .lede { margin-left: auto; margin-right: auto; }
 .hero .lede { max-width: 52ch; }
 
 .cta {
