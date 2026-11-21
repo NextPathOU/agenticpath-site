@@ -50,7 +50,7 @@ p { margin: 0 0 1rem; }
   white-space: nowrap;
 }
 .tagline .digit { display: inline-block; }
-.tagline .word { font-family: 'DSEG14-Classic', var(--font-headline); }
+.tagline .word { font-family: 'DSEG14-Classic', var(--font-headline); margin-left: 0.18em; }
 .tagline .digit.flipping { animation: digit-flip 0.6s ease-in-out; }
 @keyframes digit-flip {
   0% { transform: rotateX(0deg); }
