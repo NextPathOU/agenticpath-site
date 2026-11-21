@@ -177,11 +177,13 @@ header.site a.mark { display: inline-block; font-family: var(--font-headline); f
 .journey .stop-detail { font-family: var(--font-body); font-size: 15px; fill: var(--muted); }
 .journey .full-stop { fill: var(--accent); }
 [data-theme='dark'] .journey .full-stop { stroke: var(--fg); stroke-width: 1.5; }
-.journey .traveller { fill: var(--accent); stroke: var(--fg); stroke-width: 1; transition: opacity 0.2s ease; }
+.journey .traveller { fill: var(--accent); stroke: var(--fg); stroke-width: 1; transition: opacity 0.35s ease; }
 .journey .traveller.hidden { opacity: 0; }
-.journey .node, .journey .node-num { transition: fill 0.25s ease; }
+.journey .node, .journey .node-num, .journey .stop-label { transition: fill 0.25s ease; }
 .journey .lit .node { fill: var(--accent); }
 .journey .lit .node-num { fill: var(--on-accent); }
+.journey .lit .stop-label { fill: var(--accent); }
+[data-theme='light'] .journey .lit .stop-label { fill: #4d7c0f; }
 @media (prefers-reduced-motion: reduce) {
   .journey .traveller { display: none; }
 }
