@@ -75,6 +75,7 @@ header.site a.mark img { height: 28px; width: 28px; display: block; }
   color: var(--fg);
   text-decoration: none;
   margin-left: 0.5rem;
+  padding: 0.6rem 0;
 }
 .header-cta:hover { text-decoration: underline; }
 
@@ -123,7 +124,7 @@ header.site a.mark img { height: 28px; width: 28px; display: block; }
 .band-inner-narrow { max-width: 720px; margin: 0 auto; }
 
 .band-hero { padding-top: 2rem; }
-.hero-lockup { width: min(420px, 80%); height: auto; display: block; margin-bottom: 2.5rem; }
+.hero-lockup { width: min(280px, 70%); height: auto; display: block; margin-bottom: 2.5rem; }
 .lockup-dark { display: none; }
 [data-theme='dark'] .lockup-light { display: none; }
 [data-theme='dark'] .lockup-dark { display: block; }
@@ -211,10 +212,9 @@ footer.site img.wordmark { height: 28px; width: auto; display: block; margin-bot
 :focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
 ::selection { background: var(--teal); color: var(--paper); }
 
-/* Header logo link meets the 44px touch target floor. */
-header.site a.mark { padding: 6px 0; }
+/* Header logo link: 28px mark with 8px padding on all sides, 44px square. */
+header.site a.mark { padding: 8px; }
 
 @media (max-width: 640px) {
   .band { padding: 3rem 1.25rem; }
-  .header-cta { display: none; }
 }
