@@ -132,6 +132,34 @@ const { title, description = 'Marketing with agentic systems for B2B companies w
       }
       applyTheme(document.documentElement.dataset.theme || 'light');
 
+      // Journey diagram: light up each stop while the traveller overlaps it.
+      // Driven by the dot's real position, so the light-up can never drift
+      // out of step with the dot the way timed keyframes did.
+      const journey = document.querySelector('.journey');
+      const journeyDot = document.getElementById('journey-dot');
+      const journeyNodes = [1, 2, 3].map((n) => document.querySelector('.journey .node-' + n));
+      const reduceMotionJourney = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (journey && journeyDot && journeyNodes.every(Boolean) && !reduceMotionJourney.matches) {
+        const syncJourney = () => {
+          const scale = journey.getBoundingClientRect().width / 760;
+          const dot = journeyDot.getBoundingClientRect();
+          const dotX = dot.left + dot.width / 2;
+          const dotY = dot.top + dot.height / 2;
+          let anyLit = false;
+          journeyNodes.forEach((g) => {
+            const c = g.querySelector('.node').getBoundingClientRect();
+            const cx = c.left + c.width / 2;
+            const cy = c.top + c.height / 2;
+            const lit = Math.abs(dotX - cx) < 27 * scale && Math.abs(dotY - cy) < 27 * scale;
+            g.classList.toggle('lit', lit);
+            if (lit) anyLit = true;
+          });
+          journeyDot.classList.toggle('hidden', anyLit);
+          requestAnimationFrame(syncJourney);
+        };
+        requestAnimationFrame(syncJourney);
+      }
+
       // Hero tagline: the second digit flips 0 to 1 like a digital clock, the first stays 0.
       const digitB = document.getElementById('digit-b');
       const reduceMotionFlip = window.matchMedia('(prefers-reduced-motion: reduce)');
