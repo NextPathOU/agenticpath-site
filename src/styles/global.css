@@ -146,7 +146,7 @@ header.site a.mark { display: inline-block; font-family: var(--font-headline); f
 
 /* Bands */
 .band { padding: 4rem 1.5rem; }
-.band + .band { border-top: 1px solid color-mix(in srgb, var(--fg) 15%, transparent); }
+.band + .band { border-top: 8px solid var(--accent); }
 .band-inner { max-width: 1400px; margin: 0 auto; }
 .band-inner-narrow { max-width: 720px; margin: 0 auto; }
 
@@ -189,10 +189,6 @@ header.site a.mark { display: inline-block; font-family: var(--font-headline); f
   .journey .traveller { display: none; }
 }
 
-/* Dark band */
-.band-dark { background: var(--band-bg); color: var(--band-fg); }
-.band-dark .eyebrow { color: var(--band-fg); }
-.band-dark .muted { color: #c9c2b4; }
 .problems {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -202,17 +198,7 @@ header.site a.mark { display: inline-block; font-family: var(--font-headline); f
 .problems h3 { border-top: 2px solid var(--accent); padding-top: 1rem; }
 .problems .who-item { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-headline); font-weight: 700; font-size: 1.25rem; border-top: 2px solid var(--accent); padding-top: 1rem; margin: 0; }
 .problems .who-item svg { flex: none; color: var(--accent); }
-.problems .num { color: var(--band-fg); display: block; margin-bottom: 0.5rem; }
-
-/* Process cards */
-.process {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.process article { border-top: 2px solid var(--fg); padding-top: 1rem; }
-.process .num { color: var(--link); display: block; margin-bottom: 0.5rem; }
+.problems .num { color: var(--link); display: block; margin-bottom: 0.5rem; }
 
 /* Contact form */
 .contact-form {
