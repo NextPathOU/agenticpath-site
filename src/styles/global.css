@@ -42,11 +42,12 @@ p { margin: 0 0 1rem; }
 .tagline {
   font-family: 'DSEG7-Classic', var(--font-headline);
   font-weight: 300;
-  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-size: clamp(1.6rem, 7vw, 5rem);
   line-height: 1.12;
   letter-spacing: -0.02em;
   margin: 0 0 1rem;
   perspective: 600px;
+  white-space: nowrap;
 }
 .tagline .digit { display: inline-block; }
 .tagline .word { font-family: 'DSEG14-Classic', var(--font-headline); }
