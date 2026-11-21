@@ -49,7 +49,8 @@ p { margin: 0 0 1rem; }
   perspective: 600px;
   white-space: nowrap;
 }
-.tagline .digit { display: inline-block; }
+.tagline .digit { display: inline-block; color: var(--accent); }
+[data-theme='light'] .tagline .digit { color: #4d7c0f; }
 .tagline .word { font-family: 'DSEG14-Classic', var(--font-headline); margin-left: 0.18em; }
 .tagline .digit.flipping { animation: digit-flip 0.6s ease-in-out; }
 @keyframes digit-flip {
@@ -215,11 +216,6 @@ footer.site {
   margin: 0 auto;
   padding: 2rem 1.5rem 3rem;
 }
-footer.site img.wordmark { height: 28px; width: auto; display: block; margin-bottom: 1rem; }
-.wordmark-dark { display: none; }
-[data-theme='dark'] .wordmark-light { display: none; }
-[data-theme='dark'] .wordmark-dark { display: block; }
-
 /* Browser surfaces, the parts nobody drew still carry the design. */
 :focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
 ::selection { background: var(--accent); color: var(--on-accent); }
