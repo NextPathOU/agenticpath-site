@@ -49,6 +49,7 @@ p { margin: 0 0 1rem; }
   perspective: 600px;
 }
 .tagline .digit { display: inline-block; }
+.tagline .word { font-family: 'DSEG14-Classic', var(--font-headline); }
 .tagline .digit.flipping { animation: digit-flip 0.6s ease-in-out; }
 @keyframes digit-flip {
   0% { transform: rotateX(0deg); }
