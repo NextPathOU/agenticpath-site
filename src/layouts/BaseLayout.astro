@@ -32,6 +32,7 @@ const { title, description = 'Marketing with agentic systems for B2B companies w
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dseg@0.46.0/css/dseg.css" />
     <title>{title}</title>
   </head>
   <body>
@@ -129,20 +130,17 @@ const { title, description = 'Marketing with agentic systems for B2B companies w
       });
       applyTheme(document.documentElement.dataset.theme || 'light');
 
-      // Hero tagline digits flip 0 and 1 like a digital clock.
-      const digitA = document.getElementById('digit-a');
+      // Hero tagline: the second digit flips 0 to 1 like a digital clock, the first stays 0.
       const digitB = document.getElementById('digit-b');
       const reduceMotionFlip = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if (digitA && digitB && !reduceMotionFlip.matches) {
+      if (digitB && !reduceMotionFlip.matches) {
         setInterval(() => {
-          [digitA, digitB].forEach((d) => d.classList.add('flipping'));
+          digitB.classList.add('flipping');
           setTimeout(() => {
-            [digitA, digitB].forEach((d) => {
-              d.textContent = d.textContent === '0' ? '1' : '0';
-            });
+            digitB.textContent = digitB.textContent === '0' ? '1' : '0';
           }, 300);
           setTimeout(() => {
-            [digitA, digitB].forEach((d) => d.classList.remove('flipping'));
+            digitB.classList.remove('flipping');
           }, 600);
         }, 2400);
       }
