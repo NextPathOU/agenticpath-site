@@ -42,13 +42,15 @@ const { title, description = 'Marketing with agentic systems for B2B companies w
       <aside class="rail">
         <a class="rail-mark" href="#top" aria-label="AgenticPath home">A</a>
         <div class="rail-name">AgenticPath</div>
-        <nav aria-label="Sections">
+        <button id="btn-menu" class="hamburger" type="button" aria-expanded="false" aria-controls="rail-nav" aria-label="Menu">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+        <nav aria-label="Sections" id="rail-nav">
           <a href="#product" data-spy="product"><span class="num">[1]</span>Product</a>
           <a href="#who" data-spy="who"><span class="num">[2]</span>Who is it for</a>
           <a href="#problem" data-spy="problem"><span class="num">[3]</span>The problem</a>
           <a href="#engagement" data-spy="engagement"><span class="num">[4]</span>The engagement</a>
-          <a href="#how" data-spy="how"><span class="num">[5]</span>How we work</a>
-          <a href="#contact" data-spy="contact"><span class="num">[6]</span>Talk to us</a>
+          <a href="#contact" data-spy="contact"><span class="num">[5]</span>Talk to us</a>
         </nav>
         <div class="rail-foot">
           <button id="btn-theme" class="theme-toggle" type="button">
@@ -205,7 +207,7 @@ const { title, description = 'Marketing with agentic systems for B2B companies w
       // its rail link) is the active one, and a short section like #who
       // is never skipped for the section after it.
       (function () {
-        var ids = ['product', 'who', 'problem', 'engagement', 'how', 'contact'];
+        var ids = ['product', 'who', 'problem', 'engagement', 'contact'];
         var links = {};
         ids.forEach(function (id) {
           var a = document.querySelector('[data-spy="' + id + '"]');
@@ -224,6 +226,23 @@ const { title, description = 'Marketing with agentic systems for B2B companies w
         }
         window.addEventListener('scroll', spy, { passive: true });
         spy();
+      })();
+
+      // Hamburger: on narrow widths the rail nav sits behind the menu button.
+      (function () {
+        var btn = document.getElementById('btn-menu');
+        var rail = document.querySelector('.rail');
+        if (!btn || !rail) return;
+        btn.addEventListener('click', function () {
+          var open = rail.classList.toggle('nav-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        rail.querySelectorAll('nav a').forEach(function (a) {
+          a.addEventListener('click', function () {
+            rail.classList.remove('nav-open');
+            btn.setAttribute('aria-expanded', 'false');
+          });
+        });
       })();
     </script>
   </body>
