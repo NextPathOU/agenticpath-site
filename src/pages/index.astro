@@ -8,7 +8,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <header class="hero">
     <h1 class="tagline"><span class="digit" id="digit-a">0</span> <span class="digit" id="digit-b">0</span> <span class="word">marketing.</span></h1>
     <p class="lede">Skip <span class="hl">expensive</span> setup. <span class="hl">Agentic</span> Marketing. Move the <span class="hl">needle</span>. In 2 <span class="hl">months</span>.</p>
-    <p class="hero-ctas"><a class="btn" href="#contact">Get in touch</a> <a class="btn btn-light" href="#how">See how we work</a></p>
+    <p class="hero-ctas"><a class="btn" href="#contact">Get in touch</a> <a class="btn btn-light" href="#engagement">The engagement</a></p>
   </header>
 
   <div class="panels" id="product">
@@ -36,7 +36,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <h3>Audit</h3>
       <p>Month one. We read the funnel, the site, the ads and the CRM, and rank what is broken by impact.</p>
-      <a class="btn" href="#how">How we work</a>
+      <a class="btn" href="#engagement">The engagement</a>
     </div>
 
     <div class="panel-col">
@@ -89,7 +89,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <h3>Mission control</h3>
       <p>Every client gets their own dashboard. Pipeline, budgets and agent suggestions in one place.</p>
-      <a class="btn" href="#banner">Mission control</a>
+      <a class="btn" href="#contact">Talk to us</a>
     </div>
   </div>
 
@@ -142,18 +142,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </section>
 
-  <section class="block" id="who-we-are" tabindex="-1">
-    <div class="block-label">Who we are</div>
-    <div>
-      <p class="who-line">20+ years experience <span class="sep" aria-hidden="true">|</span> B2B performance marketing <span class="sep" aria-hidden="true">|</span> Product management <span class="sep" aria-hidden="true">|</span> Product development <span class="sep" aria-hidden="true">|</span> Impact-driven <span class="sep" aria-hidden="true">|</span> data-measured <span class="sep" aria-hidden="true">|</span> scale-ups</p>
-    </div>
-  </section>
-
   <section class="block" id="engagement" tabindex="-1">
     <div class="block-label">The engagement</div>
     <div>
       <p class="block-intro"><strong>Two months. Then you decide.</strong></p>
-      <svg class="journey" viewBox="0 0 760 240" role="img" aria-label="A route with three stops: month one audit, month two strategy, then optional execution, ending in a lime square full stop. A lime point travels along the route through the three stops.">
+      <svg class="journey" viewBox="0 0 760 240" role="img" aria-label="A route with three stops: month one audit, month two strategy, then optional execution. A lime point travels along the route through the three stops.">
         <line class="route" x1="40" y1="70" x2="680" y2="70" />
         <g class="node-1">
           <circle class="node" cx="140" cy="70" r="20" />
@@ -176,53 +169,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <circle id="journey-dot" class="traveller" r="7" cx="0" cy="0">
           <animateMotion dur="12s" repeatCount="indefinite" path="M40,70 L680,70" />
         </circle>
-        <rect class="full-stop" x="688" y="55" width="30" height="30" />
       </svg>
       <p class="block-note">One month to understand how you win customers today. One month to turn that into a tailored strategy and go-to-market plan. Execution after that is your call, not ours to assume.</p>
     </div>
   </section>
-
-  <section class="block" id="how" tabindex="-1">
-    <div class="block-label">How we work</div>
-    <div>
-      <p class="block-intro"><strong>Human-led. Agentic where it repeats.</strong></p>
-      <div class="steps">
-        <div class="step">
-          <span class="n">01</span>
-          <div>
-            <h4>Month one, audit</h4>
-            <p>We build a grounded picture of how you win and serve customers today: positioning, channels, the sales path, the data you have, and where opportunities stall.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="n">02</span>
-          <div>
-            <h4>Month two, strategy</h4>
-            <p>The audit findings become a tailored strategy and go-to-market plan, sequenced, with the measurement to match.</p>
-          </div>
-        </div>
-        <div class="step">
-          <span class="n">03</span>
-          <div>
-            <h4>Then, execution</h4>
-            <p>Optional. Paid media, organic search and content, social activity, analytics, and RevOps, with agentic systems supporting the repeatable work over time.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="banner" id="banner">
-    <div class="b-kicker">MISSION CONTROL</div>
-    <h2>Everything you need to see your marketing working</h2>
-    <p>
-      Pipeline, budgets, pacing and the next action an agent suggests, in one
-      dashboard per client. You see your company. We see the work across all
-      of them, and we do the work in the same place you watch it.
-    </p>
-    <a class="btn" href="#contact">Start with the audit</a>
-    <div class="banner-dots" aria-hidden="true"></div>
-  </div>
 
   <section class="block" id="contact" tabindex="-1">
     <div class="block-label">Talk to us</div>
