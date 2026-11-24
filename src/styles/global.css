@@ -157,17 +157,17 @@ p { margin: 0 0 1rem; }
   gap: 18px;
   margin-top: 52px;
 }
-.panel-col { min-width: 0; }
+.panel-col { min-width: 0; display: flex; flex-direction: column; }
 .panel {
   background: var(--panel);
   color: var(--panel-ink);
   border: 1px solid var(--line);
-  height: 424px;
+  min-height: 424px;
+  flex: 1 0 auto;
   padding: 18px;
   font-family: var(--mono);
   font-size: 13px;
   line-height: 1.65;
-  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -387,7 +387,7 @@ footer.site { padding: 90px 0 40px; overflow: hidden; }
 /* ---------- responsive ---------- */
 @media (max-width: 1180px) {
   .panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .panel { height: 404px; }
+  .panel { min-height: 404px; }
   section.block { grid-template-columns: 220px minmax(0, 1fr); gap: 32px; }
   .cell-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
