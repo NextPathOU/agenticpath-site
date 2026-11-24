@@ -199,24 +199,31 @@ const { title, description = 'Marketing with agentic systems for B2B companies w
         }
       })();
 
-      // Scroll spy for the left rail.
+      // Scroll spy for the left rail. Scroll-position based: the active
+      // section is the last one whose top has passed a quarter of the
+      // viewport, so a section scrolled to the top (e.g. after clicking
+      // its rail link) is the active one, and a short section like #who
+      // is never skipped for the section after it.
       (function () {
-        var links = document.querySelectorAll('[data-spy]');
-        if (!links.length || !('IntersectionObserver' in window)) return;
-        var map = {};
-        links.forEach(function (a) { map[a.getAttribute('data-spy')] = a; });
-        var obs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting && map[e.target.id]) {
-              links.forEach(function (a) { a.classList.remove('active'); });
-              map[e.target.id].classList.add('active');
-            }
-          });
-        }, { rootMargin: '-30% 0px -60% 0px' });
-        ['product', 'who', 'problem', 'engagement', 'how', 'contact'].forEach(function (id) {
-          var el = document.getElementById(id);
-          if (el) obs.observe(el);
+        var ids = ['product', 'who', 'problem', 'engagement', 'how', 'contact'];
+        var links = {};
+        ids.forEach(function (id) {
+          var a = document.querySelector('[data-spy="' + id + '"]');
+          if (a) links[id] = a;
         });
+        function spy() {
+          var pos = window.scrollY + window.innerHeight * 0.25;
+          var current = ids[0];
+          ids.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el && el.getBoundingClientRect().top + window.scrollY <= pos) current = id;
+          });
+          ids.forEach(function (id) {
+            if (links[id]) links[id].classList.toggle('active', id === current);
+          });
+        }
+        window.addEventListener('scroll', spy, { passive: true });
+        spy();
       })();
     </script>
   </body>
